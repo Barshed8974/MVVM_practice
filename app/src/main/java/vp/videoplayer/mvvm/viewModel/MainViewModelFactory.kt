@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import vp.videoplayer.mvvm.Repository.QuoteRepo
 
 class MainViewModelFactory(private  val repo: QuoteRepo) : ViewModelProvider.Factory {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
         Log.d("ALI","Factory")
         return MainViewModel(repo) as T
     }

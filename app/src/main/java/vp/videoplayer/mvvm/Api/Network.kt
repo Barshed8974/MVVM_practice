@@ -2,8 +2,9 @@ package vp.videoplayer.mvvm.Api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 
-object Network {
+object  Network {
     private const val BASE_URL="https://quotable.io/"
 
     fun getInstance():Retrofit{
@@ -12,4 +13,6 @@ object Network {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+    fun getApiServices():API= getInstance().create()
+
 }
